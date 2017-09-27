@@ -1,12 +1,15 @@
 require('spec_helper')
 
 describe(Recipe) do
-  it("Will add a recipe with ingredients and instructions") do
-    test_recipe = Recipe.create({:name => "Pizza", :tag_id => nil, :ingredient_id => nil, :instructions => "put in oven all ingredients, heat, collect insurance so you can buy a pizza", :rating => 5})
-    flour_object = Ingredient.create({:description => "flour", :recipe_id => test_recipe.id})
-    olive_oil_object = Ingredient.create({:description => "olive oil", :recipe_id => test_recipe.id})
 
-    # binding.pry
-    expect(test_recipe.ingredients).to(eq([flour_object, olive_oil_object]))
-  end
+  # it("Will add a recipe with ingredients and instructions") do
+  #   ingredient1 = Ingredient.create({:description => "flour, olive oil"})
+  #   recipe1 = Recipe.create({:name => "Pizza", :tag_id => nil, :ingredient_id => ingredient1.id, :instructions => "put in oven", :rating => 5})
+  #   expect(recipe1.ingredient_id).to(eq(ingredient1.id))
+  # end
+
+  it { should belong_to(:ingredient) }
+
+  it { should belong_to(:tag) }
+
 end
