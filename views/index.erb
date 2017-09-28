@@ -1,12 +1,11 @@
 <h1>Welcome To Recipe Box</h1>
-
+<!-- change your database schema!!  -->
 <div class="row">
   <div class="col col-md-4">
     <div class="card">
       <h2>Recipes:</h2>
       <a href="/recipe/create">Add a Recipe</a>
       <% @recipes.each do |recipe| %>
-        <li> <%=recipe.name%> (Rating: <%=recipe.rating%>)</li>
         <li><a href="/recipe/<%=recipe.id%>"><%=recipe.name%> (Rating: <%=recipe.rating%>)</a></li>
       <% end %>
     </div>

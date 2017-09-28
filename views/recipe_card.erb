@@ -1,25 +1,35 @@
 <br>
-<h2><%=@recipe.name%></h2>
-
 <div class="card">
-  <% @recipes.each do |recipe| %>
-    <h3>Categories:</h3>
-    <li> <%=@recipe.tag_id%> </li>
-    <h3>Ingredients:</h3>
-    <li> <%=@recipe.ingredient_id%> </li>
-  <% end %>
-</div>
+  <h2><%=@recipe.name%></h2><a href="/">Home</a>
+  <div class="row">
 
-<div class="card">
-  <form action="/recipe/:id" method="post">
-    <div class="form-group">
-      <label for="ingredient">Add an Ingredient: </label>
-      <input type="text" name="ingredient" class="form-control">
-      <br>
-      <label for="tag">Add a Category: </label>
-      <input type="text" name="tag" class="form-control">
-    </div>
-    <button type="submit" class="btn btn-info">Submit</button>
-  </form>
-  <a href="/">Home</a>
+    <!-- <div class="col col-md-8"> -->
+      <div class="card">
+        <form action="/recipe/:id" method="post">
+          <div class="form-group">
+            <label for="ingredient">Add an Ingredient: </label>
+            <input type="text" name="ingredient" class="form-control">
+            <br>
+            <label for="tag">Add a Category: </label>
+            <input type="text" name="tag" class="form-control">
+          </div>
+          <button type="submit" class="btn btn-info">Submit</button>
+        </form>
+      </div>
+    <!-- </div> -->
+
+    <!-- <div class="col col-lg-4"> -->
+      <div class="card">
+        <div class="">
+          <% @recipes.each do |recipe| %>
+            <h6>Categories:</h6>
+            <li> <%=recipe.tag_id%> </li>
+            <h6>Ingredients:</h6>
+            <li> <%=recipe.ingredient_id%> </li>
+          <% end %>
+        </div>
+      </div>
+    <!-- </div> -->
+
+  </div>
 </div>
