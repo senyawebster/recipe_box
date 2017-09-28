@@ -1,1 +1,31 @@
 <h1>Welcome To Recipe Box</h1>
+
+<div class="row">
+  <div class="col col-md-4">
+    <div class="card">
+      <h2>Recipes:</h2>
+      <% @recipes.each do |x| %>
+        <li> <%=x.name%> </li>
+      <% end %>
+      <a href="/recipe/create">Add a Recipe</a>
+    </div>
+  </div>
+  <div class="col col-md-4">
+    <div class="card">
+      <h2>Categories:</h2>
+      <% @tags.each do |x| %>
+        <li> <%=x.food_type%> </li>
+      <% end %>
+      <a href="/category/create">Add a Category to Tag your Recipes</a>
+    </div>
+  </div>
+  <div class="col col-md-4">
+    <div class="card">
+      <h2>Ingredients:</h2>
+      <% @ingredients.each do |x| %>
+        <li> <%=x.description%> </li>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
