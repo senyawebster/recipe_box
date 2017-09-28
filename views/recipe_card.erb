@@ -4,9 +4,9 @@
 <div class="card">
   <% @recipes.each do |recipe| %>
     <h3>Categories:</h3>
-    <li> <%=@recipe.tag%> </li>
+    <li> <%=@recipe.tag_id%> </li>
     <h3>Ingredients:</h3>
-    <li> <%=@recipe.ingredient%> </li>
+    <li> <%=@recipe.ingredient_id%> </li>
   <% end %>
 </div>
 
