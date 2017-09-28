@@ -1,0 +1,25 @@
+<br>
+<h2><%=@recipe.name%></h2>
+
+<div class="card">
+  <% @recipes.each do |recipe| %>
+    <h3>Categories:</h3>
+    <li> <%=@recipe.tag%> </li>
+    <h3>Ingredients:</h3>
+    <li> <%=@recipe.ingredient%> </li>
+  <% end %>
+</div>
+
+<div class="card">
+  <form action="/recipe/:id" method="post">
+    <div class="form-group">
+      <label for="ingredient">Add an Ingredient: </label>
+      <input type="text" name="ingredient" class="form-control">
+      <br>
+      <label for="tag">Add a Category: </label>
+      <input type="text" name="tag" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-info">Submit</button>
+  </form>
+  <a href="/">Home</a>
+</div>

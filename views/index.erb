@@ -4,23 +4,24 @@
   <div class="col col-md-4">
     <div class="card">
       <h2>Recipes:</h2>
-      <% @recipes.each do |x| %>
-        <li> <%=x.name%> </li>
-      <% end %>
       <a href="/recipe/create">Add a Recipe</a>
+      <% @recipes.each do |recipe| %>
+        <li> <%=recipe.name%> (Rating: <%=recipe.rating%>)</li>
+        <li><a href="/recipe/<%=recipe.id%>"><%=recipe.name%> (Rating: <%=recipe.rating%>)</a></li>
+      <% end %>
     </div>
   </div>
 
   <div class="col col-md-4">
     <div class="card">
       <h2>Categories:</h2>
+      <a href="/category/create">Add a Category to Tag your Recipes</a>
       <% @tags.each do |x| %>
         <li> <%=x.food_type%> </li>
       <% end %>
-      <a href="/category/create">Add a Category to Tag your Recipes</a>
     </div>
   </div>
-  
+
   <div class="col col-md-4">
     <div class="card">
       <h2>Ingredients:</h2>
